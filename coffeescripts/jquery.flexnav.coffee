@@ -100,13 +100,13 @@ $.fn.flexNav = (options) ->
       $nav.removeClass('show')
       if settings.hoverIntent is true
         # Requires hoverIntent jquery plugin http://cherne.net/brian/resources/jquery.hoverIntent.html
-        $('.item-with-ul').hoverIntent(
+        $nav.find('.item-with-ul').hoverIntent(
           over: showMenu,
           out: resetMenu,
           timeout: settings.hoverIntentTimeout
         )
       else if settings.hoverIntent is false
-        $('.item-with-ul').on('mouseenter', showMenu).on('mouseleave', resetMenu)
+        $nav.find('.item-with-ul').on('mouseenter', showMenu).on('mouseleave', resetMenu)
 	
   # Set navigation element for this instantiation
   $(settings['buttonSelector']).data('navEl', $nav)
